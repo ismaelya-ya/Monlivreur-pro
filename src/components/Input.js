@@ -14,8 +14,12 @@ export default function Input({ placeholder, value, onChangeText, multiline, sty
       keyboardType={keyboardType}
       {...(Platform.OS === 'web' && { 
         onKeyPress: (e) => {
-          if (e.key === 'Enter' && !multiline) {
-            e.target.blur();
+          // Support both React Native Web and browser events safely
+          const key = e?.nativeEvent?.key ?? e?.key;
+          if (key === 'Enter' && !multiline) {
+            if (e?.target && typeof e.target.blur === 'function') {
+              e.target.blur();
+            }
           }
         }
       })}
