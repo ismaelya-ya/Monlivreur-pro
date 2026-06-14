@@ -1,3 +1,4 @@
-# Expo HAS CHANGED
+# Expo has changed
 
-Read the exact versioned docs at https://docs.expo.dev/versions/v56.0.0/ before writing any code.
+Please read the versioned Expo documentation for v56.0.0 before writing any code:
+https://docs.expo.dev/versions/v56.0.0/
